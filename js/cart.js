@@ -165,16 +165,8 @@ class ShoppingCart {
             return;
         }
 
-        const total = this.getTotal();
-        const itemCount = this.getItemCount();
-
-        alert(`Thank you for your interest!\n\nOrder Summary:\n${itemCount} item(s)\nTotal: $${total.toLocaleString()}\n\nPlease contact us at (508) 555-1234 or visit our shop to complete your purchase.`);
-
-        // Clear cart after checkout
-        this.items = [];
-        this.saveCart();
-        this.updateCartCount();
-        this.hideCart();
+        // Redirect to checkout page
+        window.location.href = 'checkout.html';
     }
 
     saveCart() {

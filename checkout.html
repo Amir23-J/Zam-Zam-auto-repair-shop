@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your purchase at Zam Zam Auto Shop - Secure checkout for auto parts and accessories.">
+    <title>Checkout | Zam Zam Auto Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Payment Gateway Scripts (loaded conditionally) -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+    <script src="https://web.squarecdn.com/v1/square.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-car"></i>
+                    <span>Zam Zam Auto Shop</span>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="cars.html">Cars for Sale</a></li>
+                    <li><a href="parts.html">Parts & Accessories</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="#" class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero" style="height: 40vh; min-height: 300px;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Secure Checkout</h1>
+            <p class="hero-subtitle">Complete Your Order</p>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section style="padding: 3rem 0; background: var(--bg-light);">
+        <div class="container">
+            <div id="checkoutContainer">
+                <!-- Step Indicator -->
+                <div class="checkout-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Cart Review</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Information</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Payment</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Confirmation</div>
+                    </div>
+                </div>
+
+                <!-- Checkout Content Grid -->
+                <div class="checkout-grid">
+                    <!-- Left Column - Forms -->
+                    <div class="checkout-main">
+                        <!-- Step 1: Cart Review -->
+                        <div class="checkout-section" id="step1" style="display: block;">
+                            <h2>Review Your Order</h2>
+                            <div id="checkoutCartItems"></div>
+                            <button class="btn btn-primary" onclick="goToStep(2)" style="width: 100%; margin-top: 1rem;">
+                                Continue to Information <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Step 2: Customer Information -->
+                        <div class="checkout-section" id="step2" style="display: none;">
+                            <h2>Contact Information</h2>
+                            <form id="customerInfoForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name *</label>
+                                        <input type="text" id="firstName" name="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name *</label>
+                                        <input type="text" id="lastName" name="lastName" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkoutEmail">Email *</label>
+                                    <input type="email" id="checkoutEmail" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkoutPhone">Phone *</label>
+                                    <input type="tel" id="checkoutPhone" name="phone" required>
+                                </div>
+
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Shipping/Pickup Information</h3>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" id="pickupInStore" onchange="toggleShippingFields()">
+                                        I'll pick up in store (free)
+                                    </label>
+                                </div>
+
+                                <div id="shippingFields">
+                                    <div class="form-group">
+                                        <label for="address">Street Address *</label>
+                                        <input type="text" id="address" name="address">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="city">City *</label>
+                                            <input type="text" id="city" name="city">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="state">State *</label>
+                                            <input type="text" id="state" name="state" value="MA">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="zip">ZIP Code *</label>
+                                            <input type="text" id="zip" name="zip">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="checkout-buttons">
+                                    <button type="button" class="btn btn-secondary" onclick="goToStep(1)">
+                                        <i class="fas fa-arrow-left"></i> Back
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        Continue to Payment <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Step 3: Payment Method -->
+                        <div class="checkout-section" id="step3" style="display: none;">
+                            <h2>Select Payment Method</h2>
+                            <div id="paymentMethods" class="payment-methods-grid"></div>
+
+                            <!-- Payment Forms (shown based on selection) -->
+                            <div id="paymentForms">
+                                <!-- Stripe Form -->
+                                <div id="stripeForm" class="payment-form" style="display: none;">
+                                    <div id="card-element" style="padding: 1rem; background: white; border: 1px solid #ddd; border-radius: 8px;"></div>
+                                    <div id="card-errors" style="color: var(--error); margin-top: 0.5rem;"></div>
+                                </div>
+
+                                <!-- PayPal Button -->
+                                <div id="paypalForm" class="payment-form" style="display: none;">
+                                    <div id="paypal-button-container"></div>
+                                </div>
+
+                                <!-- Square Form -->
+                                <div id="squareForm" class="payment-form" style="display: none;">
+                                    <div id="card-container"></div>
+                                    <div id="square-errors" style="color: var(--error); margin-top: 0.5rem;"></div>
+                                </div>
+
+                                <!-- Cash/Phone Instructions -->
+                                <div id="alternativeForm" class="payment-form" style="display: none;">
+                                    <div class="info-box">
+                                        <i class="fas fa-info-circle"></i>
+                                        <p id="alternativeInstructions"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="checkout-buttons" style="margin-top: 2rem;">
+                                <button type="button" class="btn btn-secondary" onclick="goToStep(2)">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button type="button" class="btn btn-primary" id="completeOrderBtn">
+                                    Complete Order <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Confirmation -->
+                        <div class="checkout-section" id="step4" style="display: none;">
+                            <div class="success-message">
+                                <i class="fas fa-check-circle"></i>
+                                <h2>Order Confirmed!</h2>
+                                <p>Thank you for your order. We'll contact you shortly with details.</p>
+                                <div id="orderSummary"></div>
+                                <a href="index.html" class="btn btn-primary" style="margin-top: 2rem;">
+                                    Return to Home
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Order Summary -->
+                    <div class="checkout-sidebar">
+                        <div class="order-summary">
+                            <h3>Order Summary</h3>
+                            <div id="summaryItems"></div>
+                            <div class="summary-line">
+                                <span>Subtotal</span>
+                                <span id="summarySubtotal">$0.00</span>
+                            </div>
+                            <div class="summary-line" id="shippingLine">
+                                <span>Shipping</span>
+                                <span id="summaryShipping">$0.00</span>
+                            </div>
+                            <div class="summary-line" id="taxLine">
+                                <span>Tax</span>
+                                <span id="summaryTax">$0.00</span>
+                            </div>
+                            <div class="summary-total">
+                                <span>Total</span>
+                                <span id="summaryTotal">$0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Security Badges -->
+                        <div class="security-badges">
+                            <i class="fas fa-lock"></i>
+                            <p>Secure SSL Encrypted Payment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Zam Zam Auto Shop</h3>
+                    <p>Worcester's premier destination for auto repair services and quality used cars.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="cars.html">Cars for Sale</a></li>
+                        <li><a href="parts.html">Parts & Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#oil-change">Oil Changes</a></li>
+                        <li><a href="services.html#brakes">Brake Service</a></li>
+                        <li><a href="services.html#diagnostics">Engine Diagnostics</a></li>
+                        <li><a href="services.html#tires">Tire Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <span id="footerAddress">123 Main Street, Worcester, MA 01608</span></li>
+                        <li><i class="fas fa-phone"></i> <span id="footerPhone">(508) 555-1234</span></li>
+                        <li><i class="fas fa-envelope"></i> <span id="footerEmail">info@zamzamauto.com</span></li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8AM-6PM, Sat: 9AM-4PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zam Zam Auto Shop. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
