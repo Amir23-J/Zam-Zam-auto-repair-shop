@@ -40,18 +40,18 @@ const CONFIG = {
     },
 
     // ============================================
-    // THEME COLORS (UPDATE THESE TO MATCH YOUR SIGN!)
+    // THEME COLORS - MATCHED TO ZAM ZAM SIGN!
     // ============================================
     theme: {
-        // Primary brand color (main color on your sign)
-        primaryColor: "#d32f2f",        // Red - CHANGE THIS!
-        primaryDark: "#9a0007",
-        primaryLight: "#ff6659",
+        // Primary brand color - BLUE (from your sign)
+        primaryColor: "#1565C0",        // Professional Blue
+        primaryDark: "#0D47A1",         // Darker Blue
+        primaryLight: "#42A5F5",        // Lighter Blue
 
-        // Secondary brand color (accent color on your sign)
-        secondaryColor: "#1976d2",      // Blue - CHANGE THIS!
-        secondaryDark: "#004ba0",
-        secondaryLight: "#63a4ff",
+        // Secondary brand color - YELLOW (from your sign)
+        secondaryColor: "#FFC107",      // Golden Yellow
+        secondaryDark: "#FF8F00",       // Amber
+        secondaryLight: "#FFD54F",      // Light Yellow
 
         // Keep these or adjust as needed
         textDark: "#212121",
