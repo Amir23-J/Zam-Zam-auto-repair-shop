@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Auto parts and accessories at Zam Zam Auto Shop. Quality OEM and aftermarket parts with competitive pricing in Worcester, MA.">
+    <title>Parts & Accessories | Zam Zam Auto Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-car"></i>
+                    <span>Zam Zam Auto Shop</span>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="cars.html">Cars for Sale</a></li>
+                    <li><a href="parts.html" class="active">Parts & Accessories</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="#" class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero" style="height: 50vh; min-height: 400px;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Parts & Accessories</h1>
+            <p class="hero-subtitle">Quality Auto Parts for All Makes and Models</p>
+            <p class="hero-description">OEM & Aftermarket • Competitive Prices • In Stock</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section style="padding: 3rem 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="filters">
+                <h3 style="margin-bottom: 1.5rem; text-align: center;">Find the Right Parts</h3>
+                <div class="filters-grid" style="grid-template-columns: 1fr 2fr;">
+                    <div class="filter-group">
+                        <label for="categoryFilter">Category</label>
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="Brakes">Brakes</option>
+                            <option value="Engine">Engine</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Fluids">Fluids</option>
+                            <option value="HVAC">HVAC</option>
+                            <option value="Interior">Interior</option>
+                            <option value="Exterior">Exterior</option>
+                            <option value="Lighting">Lighting</option>
+                            <option value="Safety">Safety</option>
+                            <option value="Tires">Tires</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="searchFilter">Search Parts</label>
+                        <input type="text" id="searchFilter" placeholder="Search by name, description, or part number...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parts Grid -->
+    <section class="featured-cars" style="padding: 3rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Available Parts & Accessories</h2>
+                <p>High-quality parts for your vehicle at competitive prices</p>
+            </div>
+            <div class="parts-grid" id="allPartsGrid">
+                <!-- Parts will be loaded dynamically by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Overview -->
+    <section class="quick-services" style="padding: 3rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Shop by Category</h2>
+                <p>Find exactly what you need for your vehicle</p>
+            </div>
+            <div class="quick-services-grid">
+                <div class="quick-service-card">
+                    <div class="icon-wrapper" style="background: linear-gradient(135deg, #d32f2f, #ff6659);">
+                        <i class="fas fa-brake-warning"></i>
+                    </div>
+                    <h3>Brake Parts</h3>
+                    <p>Pads, rotors, calipers, and brake fluids</p>
+                </div>
+                <div class="quick-service-card">
+                    <div class="icon-wrapper" style="background: linear-gradient(135deg, #1976d2, #63a4ff);">
+                        <i class="fas fa-engine"></i>
+                    </div>
+                    <h3>Engine Parts</h3>
+                    <p>Filters, spark plugs, belts, and more</p>
+                </div>
+                <div class="quick-service-card">
+                    <div class="icon-wrapper" style="background: linear-gradient(135deg, #d32f2f, #ff6659);">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3>Fluids & Oils</h3>
+                    <p>Motor oil, transmission fluid, coolant</p>
+                </div>
+                <div class="quick-service-card">
+                    <div class="icon-wrapper" style="background: linear-gradient(135deg, #1976d2, #63a4ff);">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Lighting</h3>
+                    <p>Headlights, taillights, and LED upgrades</p>
+                </div>
+                <div class="quick-service-card">
+                    <div class="icon-wrapper" style="background: linear-gradient(135deg, #d32f2f, #ff6659);">
+                        <i class="fas fa-tire"></i>
+                    </div>
+                    <h3>Tires & Wheels</h3>
+                    <p>All-season, winter, and performance tires</p>
+                </div>
+                <div class="quick-service-card">
+                    <div class="icon-wrapper" style="background: linear-gradient(135deg, #1976d2, #63a4ff);">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <h3>Electrical</h3>
+                    <p>Batteries, alternators, and starters</p>
+                </div>
+                <div class="quick-service-card">
+                    <div class="icon-wrapper" style="background: linear-gradient(135deg, #d32f2f, #ff6659);">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Interior</h3>
+                    <p>Floor mats, seat covers, and accessories</p>
+                </div>
+                <div class="quick-service-card">
+                    <div class="icon-wrapper" style="background: linear-gradient(135deg, #1976d2, #63a4ff);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety</h3>
+                    <p>Emergency kits and safety equipment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="testimonials" style="padding: 3rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Buy Parts From Us?</h2>
+                <p>Quality parts with excellent service</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="feature-icon" style="margin: 0 auto 1rem; width: 60px; height: 60px; font-size: 1.8rem;">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Quality Guaranteed</h3>
+                    <p>All parts come with manufacturer warranties and quality guarantees.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="feature-icon" style="margin: 0 auto 1rem; width: 60px; height: 60px; font-size: 1.8rem; background: linear-gradient(135deg, #d32f2f, #ff6659);">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Expert Installation</h3>
+                    <p>Our certified mechanics can install any parts you purchase from us.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="feature-icon" style="margin: 0 auto 1rem; width: 60px; height: 60px; font-size: 1.8rem;">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Fast Availability</h3>
+                    <p>Most parts in stock or available for quick order with fast shipping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Help Finding the Right Part?</h2>
+                <p>Our experts are here to help you find exactly what you need!</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    <a href="tel:+15085551234" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> (508) 555-1234
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Zam Zam Auto Shop</h3>
+                    <p>Worcester's premier destination for auto repair services and quality used cars.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="cars.html">Cars for Sale</a></li>
+                        <li><a href="parts.html">Parts & Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#oil-change">Oil Changes</a></li>
+                        <li><a href="services.html#brakes">Brake Service</a></li>
+                        <li><a href="services.html#diagnostics">Engine Diagnostics</a></li>
+                        <li><a href="services.html#tires">Tire Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Worcester, MA 01608</li>
+                        <li><i class="fas fa-phone"></i> (508) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@zamzamauto.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8AM-6PM, Sat: 9AM-4PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zam Zam Auto Shop. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-btn" id="closeCartBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="cartItems"></div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
