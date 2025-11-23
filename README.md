@@ -13,6 +13,9 @@ A professional, fully-responsive website for Zam Zam Auto Shop in Worcester, MA.
 - **Contact** - Contact form, business information, hours, and location details
 
 ### Key Features
+- ✅ **Multi-Payment Gateway Integration** - Stripe, PayPal, Square with easy on/off controls
+- ✅ **Professional Checkout System** - 4-step checkout with multiple payment options
+- ✅ **Easy Configuration** - Turn payments on/off, match colors to your sign (all in one file!)
 - ✅ **Fully Responsive Design** - Works perfectly on desktop, tablet, and mobile devices
 - ✅ **E-Commerce Shopping Cart** - Add parts to cart, adjust quantities, and checkout
 - ✅ **Vehicle Filtering** - Filter cars by make, price range, and mileage
@@ -22,6 +25,15 @@ A professional, fully-responsive website for Zam Zam Auto Shop in Worcester, MA.
 - ✅ **SEO Optimized** - Proper meta tags and semantic HTML structure
 - ✅ **Fast Loading** - Optimized CSS and JavaScript for quick page loads
 - ✅ **Cross-Browser Compatible** - Works on all modern browsers
+
+### NEW! Payment Options
+- **Stripe** - Credit/debit card processing (most popular)
+- **PayPal** - Let customers pay with PayPal
+- **Square** - Great if you use Square in-store
+- **Pay at Shop** - Free, safe option for pickup
+- **Call to Order** - Free, customers call to complete purchase
+
+**All payment methods can be turned ON/OFF with a single setting!**
 
 ## Technology Stack
 
@@ -52,9 +64,22 @@ Zam-Zam-auto-repair-shop/
     └── (placeholder for images)
 ```
 
-## Getting Started
+## 🚀 Quick Start
 
-### Installation
+### For Your Client (Non-Technical)
+
+**📖 Start Here:** Read `PAYMENT-QUICK-START.md` (5-minute read)
+- Turn payments ON/OFF with one setting
+- Match website colors to business sign
+- Choose which payment methods to accept
+
+**📚 Full Guide:** Read `SETUP-GUIDE.md` (Complete instructions)
+- Detailed payment setup (Stripe, PayPal, Square)
+- Business information updates
+- Deployment instructions
+- Troubleshooting
+
+### For Developers
 
 1. **Clone or download this repository**
    ```bash
@@ -72,11 +97,32 @@ Zam-Zam-auto-repair-shop/
      npx http-server
      ```
 
-3. **View in browser**
+3. **Configure the site**
+   - Edit `js/config.js` to customize everything
+   - Update colors, business info, payment settings
+   - All configuration in ONE file!
+
+4. **View in browser**
    - Navigate to `http://localhost:8000` (or the appropriate port)
 
 ### No Build Process Required
 This website uses vanilla HTML, CSS, and JavaScript - no compilation or build process needed!
+
+## ⚙️ Configuration
+
+**Everything is configured in ONE file:** `js/config.js`
+
+### Quick Configuration Checklist
+
+- [ ] Update business colors (match your sign!)
+- [ ] Add your contact information
+- [ ] Configure payment methods
+- [ ] Add your logo
+- [ ] Update vehicle inventory
+- [ ] Update parts inventory
+- [ ] Add social media links
+
+**See `SETUP-GUIDE.md` for detailed instructions!**
 
 ## Customization Guide
 
