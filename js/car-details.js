@@ -33,7 +33,7 @@ function loadCarDetails() {
     // Populate all sections
     populateHeader();
     populateGallery();
-    populateQuickSpecs();
+    populateDetailedSpecs();
     populateFuelEconomy();
     populateDescription();
     populateHighlights();
@@ -138,12 +138,55 @@ function setupGalleryControls() {
     });
 }
 
-// Populate quick specs
-function populateQuickSpecs() {
-    document.getElementById('quickMileage').textContent = currentCar.mileage.toLocaleString();
-    document.getElementById('quickTransmission').textContent = currentCar.transmission;
-    document.getElementById('quickFuelType').textContent = currentCar.fuelType;
-    document.getElementById('quickColor').textContent = currentCar.color;
+// Populate detailed specs section
+function populateDetailedSpecs() {
+    // Generate stock number and trim
+    const stockNumber = `ZZ${currentCar.id.toString().padStart(4, '0')}`;
+    const trim = generateTrim(currentCar);
+    const engineSpec = generateEngineSpec(currentCar);
+    const transmissionFull = generateTransmissionFull(currentCar);
+
+    // Populate each field
+    document.getElementById('detailCondition').textContent = currentCar.condition;
+    document.getElementById('detailTrim').textContent = trim;
+    document.getElementById('detailMileage').textContent = `${currentCar.mileage.toLocaleString()} miles`;
+    document.getElementById('detailStock').textContent = stockNumber;
+    document.getElementById('detailEngine').textContent = engineSpec;
+    document.getElementById('detailTransmission').textContent = transmissionFull;
+    document.getElementById('detailDrivetrain').textContent = currentCar.drivetrain || 'FWD';
+    document.getElementById('detailExteriorColor').textContent = currentCar.color;
+    document.getElementById('detailInteriorColor').textContent = 'Ebony'; // Default
+    document.getElementById('detailFuel').textContent = currentCar.fuelType;
+}
+
+// Generate realistic trim level
+function generateTrim(car) {
+    const trims = {
+        'Accord': 'Sport 2.0T',
+        'Camry': 'XLE V6',
+        'F-150': 'XLT SuperCrew',
+        'Altima': 'SV',
+        'Silverado': 'LT Crew Cab',
+        'Elantra': 'SEL'
+    };
+
+    return trims[car.model] || 'Base Model';
+}
+
+// Generate full transmission description
+function generateTransmissionFull(car) {
+    if (car.transmission.toLowerCase().includes('automatic')) {
+        // Generate realistic automatic transmission
+        if (car.model.toLowerCase().includes('truck') || car.model.toLowerCase().includes('silverado') || car.model.toLowerCase().includes('f-150')) {
+            return 'Automatic 10-Speed';
+        } else if (car.year >= 2020) {
+            return 'Automatic CVT';
+        } else {
+            return 'Automatic 6-Speed';
+        }
+    } else {
+        return 'Manual 6-Speed';
+    }
 }
 
 // Populate fuel economy (generate realistic MPG based on vehicle type)

@@ -218,37 +218,73 @@
     object-fit: cover;
 }
 
-/* Quick Specs Bar */
-.quick-specs-bar {
+/* Detailed Specifications Section - CarsforsAle.com Style */
+.detailed-specs-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    padding: 1.5rem;
-    background: linear-gradient(135deg, var(--bg-light) 0%, #fff 100%);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    background: var(--white);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
 }
 
-.quick-spec {
+.detailed-spec-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    background: var(--white);
 }
 
-.quick-spec i {
-    font-size: 2rem;
-    color: var(--primary-color);
+.detailed-spec-item:nth-child(2n) {
+    border-right: none;
 }
 
-.spec-value {
-    font-size: 1.2rem;
+.detailed-spec-item:hover {
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.spec-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(21, 101, 192, 0.2);
+}
+
+.spec-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.spec-content {
+    flex: 1;
+}
+
+.spec-header {
+    font-size: 0.75rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
 }
 
-.spec-label {
-    font-size: 0.85rem;
-    color: var(--text-light);
+.spec-detail {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.3;
 }
 
 /* Fuel Economy Section - VIBRANT! */
@@ -595,8 +631,12 @@
         font-size: 2.5rem;
     }
 
-    .quick-specs-bar {
-        grid-template-columns: repeat(2, 1fr);
+    .detailed-specs-section {
+        grid-template-columns: 1fr;
+    }
+
+    .detailed-spec-item {
+        border-right: none;
     }
 
     .fuel-economy-display {
