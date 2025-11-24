@@ -388,8 +388,8 @@
 }
 
 .sticky-card {
-    position: sticky;
-    top: 100px;
+    /* Removed sticky positioning to prevent covering content when scrolling */
+    position: static;
 }
 
 /* Contact Card - VIBRANT! */
