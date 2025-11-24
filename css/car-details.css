@@ -1,0 +1,623 @@
+/* ===== CAR DETAILS PAGE - VIBRANT DESIGN ===== */
+
+.container-wide {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Back Bar */
+.back-bar {
+    background: var(--bg-light);
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    gap: 1rem;
+    color: var(--primary-dark);
+}
+
+/* Vehicle Details Section */
+.vehicle-details-section {
+    padding: 2rem 0 4rem;
+    background: var(--white);
+}
+
+/* Vehicle Header */
+.vehicle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border-radius: 15px;
+    color: var(--white);
+    box-shadow: 0 8px 25px rgba(21, 101, 192, 0.3);
+}
+
+.vehicle-title-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.vehicle-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-condition {
+    background: var(--success);
+    color: var(--white);
+}
+
+.badge-available {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.vehicle-price-section {
+    text-align: right;
+}
+
+.price-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.3rem;
+}
+
+.price-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.price-subtitle {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Details Grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Gallery Column */
+.gallery-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Main Image Container */
+.main-image-container {
+    position: relative;
+    background: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.gallery-nav:hover {
+    background: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.prev {
+    left: 20px;
+}
+
+.gallery-nav.next {
+    right: 20px;
+}
+
+.image-counter {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+/* Thumbnail Gallery */
+.thumbnail-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.thumbnail {
+    aspect-ratio: 16/10;
+    background: var(--bg-light);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-light);
+}
+
+.thumbnail:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.thumbnail.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(21, 101, 192, 0.3);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Quick Specs Bar */
+.quick-specs-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--bg-light) 0%, #fff 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.quick-spec {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quick-spec i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.spec-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.spec-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* Fuel Economy Section - VIBRANT! */
+.fuel-economy-section {
+    padding: 2rem;
+    background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+    border-radius: 15px;
+    color: var(--white);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.fuel-economy-section h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.fuel-economy-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.fuel-metric {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.fuel-metric.primary {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.fuel-value {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.fuel-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Fuel Gauge */
+.fuel-gauge {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.fuel-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ffc107 0%, #4caf50 100%);
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.fuel-comparison {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+/* Vehicle Description */
+.vehicle-description {
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.vehicle-description h3 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.vehicle-description p {
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* Info Column */
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sticky-card {
+    position: sticky;
+    top: 100px;
+}
+
+/* Contact Card - VIBRANT! */
+.contact-card {
+    padding: 2rem;
+    background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+    border-radius: 15px;
+    color: var(--white);
+    box-shadow: 0 8px 30px rgba(21, 101, 192, 0.4);
+}
+
+.contact-card h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-large {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+.dealer-info {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dealer-hours,
+.dealer-location {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dealer-hours i,
+.dealer-location i {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.dealer-hours strong,
+.dealer-location strong {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.dealer-hours div div,
+.dealer-location div div {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Highlights Card */
+.highlights-card,
+.features-card,
+.specifications-card,
+.history-card {
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.highlights-card h3,
+.features-card h3,
+.specifications-card h3,
+.history-card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.highlight-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Features List */
+.features-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-item i {
+    color: var(--success);
+    font-size: 1rem;
+}
+
+/* Specifications Table */
+.specs-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.spec-row:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.spec-value {
+    color: var(--text-light);
+    text-align: right;
+}
+
+/* Vehicle History */
+.history-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #e8f5e9;
+    border-radius: 8px;
+}
+
+.history-item i {
+    color: var(--success);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.history-item strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--text-dark);
+}
+
+.history-item p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Similar Vehicles */
+.similar-vehicles {
+    padding: 4rem 0;
+    background: var(--bg-light);
+}
+
+.similar-vehicles h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sticky-card {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .vehicle-header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .vehicle-price-section {
+        text-align: left;
+    }
+
+    .vehicle-title-section h1 {
+        font-size: 2rem;
+    }
+
+    .price-amount {
+        font-size: 2.5rem;
+    }
+
+    .quick-specs-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fuel-economy-display {
+        grid-template-columns: 1fr;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .thumbnail-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-specs-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .fuel-value {
+        font-size: 2.5rem;
+    }
+}

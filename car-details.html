@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vehicle details at Zam Zam Auto Shop">
+    <title>Vehicle Details | Zam Zam Auto Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/car-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-car"></i>
+                    <span>Zam Zam Auto Shop</span>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="cars.html" class="active">Cars for Sale</a></li>
+                    <li><a href="parts.html">Parts & Accessories</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="#" class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to Inventory -->
+    <div class="back-bar">
+        <div class="container">
+            <a href="cars.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Inventory
+            </a>
+        </div>
+    </div>
+
+    <!-- Vehicle Details Section -->
+    <section class="vehicle-details-section">
+        <div class="container-wide">
+            <!-- Vehicle Header -->
+            <div class="vehicle-header">
+                <div class="vehicle-title-section">
+                    <h1 id="vehicleTitle" class="vehicle-name">Loading...</h1>
+                    <div class="vehicle-badges">
+                        <span class="badge badge-condition" id="conditionBadge">Excellent</span>
+                        <span class="badge badge-available">Available</span>
+                    </div>
+                </div>
+                <div class="vehicle-price-section">
+                    <div class="price-label">Our Price</div>
+                    <div class="price-amount" id="vehiclePrice">$0</div>
+                    <div class="price-subtitle">No haggle pricing</div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="details-grid">
+                <!-- Left Column - Gallery -->
+                <div class="gallery-column">
+                    <!-- Main Image -->
+                    <div class="main-image-container">
+                        <div class="main-image" id="mainImage">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <button class="gallery-nav prev" id="prevImage">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-nav next" id="nextImage">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="image-counter" id="imageCounter">1 / 1</div>
+                    </div>
+
+                    <!-- Thumbnail Gallery -->
+                    <div class="thumbnail-gallery" id="thumbnailGallery">
+                        <!-- Thumbnails will be loaded here -->
+                    </div>
+
+                    <!-- Quick Specs Bar -->
+                    <div class="quick-specs-bar">
+                        <div class="quick-spec">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <div>
+                                <div class="spec-value" id="quickMileage">0</div>
+                                <div class="spec-label">Miles</div>
+                            </div>
+                        </div>
+                        <div class="quick-spec">
+                            <i class="fas fa-cog"></i>
+                            <div>
+                                <div class="spec-value" id="quickTransmission">Auto</div>
+                                <div class="spec-label">Transmission</div>
+                            </div>
+                        </div>
+                        <div class="quick-spec">
+                            <i class="fas fa-gas-pump"></i>
+                            <div>
+                                <div class="spec-value" id="quickFuelType">Gas</div>
+                                <div class="spec-label">Fuel Type</div>
+                            </div>
+                        </div>
+                        <div class="quick-spec">
+                            <i class="fas fa-palette"></i>
+                            <div>
+                                <div class="spec-value" id="quickColor">Silver</div>
+                                <div class="spec-label">Exterior</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fuel Economy Section -->
+                    <div class="fuel-economy-section">
+                        <h3><i class="fas fa-leaf"></i> Fuel Economy</h3>
+                        <div class="fuel-economy-display">
+                            <div class="fuel-metric">
+                                <div class="fuel-value" id="cityMPG">24</div>
+                                <div class="fuel-label">City MPG</div>
+                            </div>
+                            <div class="fuel-metric primary">
+                                <div class="fuel-value" id="combinedMPG">28</div>
+                                <div class="fuel-label">Combined MPG</div>
+                            </div>
+                            <div class="fuel-metric">
+                                <div class="fuel-value" id="highwayMPG">32</div>
+                                <div class="fuel-label">Highway MPG</div>
+                            </div>
+                        </div>
+                        <div class="fuel-gauge">
+                            <div class="fuel-bar" id="fuelBar"></div>
+                        </div>
+                        <div class="fuel-comparison">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Better than average for this class</span>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="vehicle-description">
+                        <h3>Vehicle Description</h3>
+                        <p id="vehicleDescription">Loading vehicle description...</p>
+                    </div>
+                </div>
+
+                <!-- Right Column - Details & Contact -->
+                <div class="info-column">
+                    <!-- Contact Card -->
+                    <div class="contact-card sticky-card">
+                        <h3>Interested in this vehicle?</h3>
+                        <div class="contact-buttons">
+                            <a href="tel:+15085551234" class="btn btn-primary btn-large">
+                                <i class="fas fa-phone"></i> Call Us: (508) 555-1234
+                            </a>
+                            <button class="btn btn-secondary btn-large" onclick="showInquiryForm()">
+                                <i class="fas fa-envelope"></i> Email Dealer
+                            </button>
+                            <button class="btn btn-outline btn-large" onclick="scheduleTestDrive()">
+                                <i class="fas fa-calendar-check"></i> Schedule Test Drive
+                            </button>
+                        </div>
+
+                        <div class="dealer-info">
+                            <div class="dealer-hours">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Hours:</strong>
+                                    <div>Mon-Fri: 8AM-6PM</div>
+                                    <div>Sat: 9AM-4PM</div>
+                                </div>
+                            </div>
+                            <div class="dealer-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Location:</strong>
+                                    <div>123 Main Street</div>
+                                    <div>Worcester, MA 01608</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Highlights -->
+                    <div class="highlights-card">
+                        <h3>Vehicle Highlights</h3>
+                        <div class="highlights-grid" id="highlightsGrid">
+                            <!-- Will be populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="features-card">
+                        <h3>Features & Options</h3>
+                        <div class="features-list" id="featuresList">
+                            <!-- Will be populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Specifications -->
+                    <div class="specifications-card">
+                        <h3>Vehicle Specifications</h3>
+                        <div class="specs-table">
+                            <div class="spec-row">
+                                <div class="spec-label">VIN</div>
+                                <div class="spec-value" id="vinNumber">Not Available</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Stock Number</div>
+                                <div class="spec-value" id="stockNumber">--</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Mileage</div>
+                                <div class="spec-value" id="mileageSpec">0 miles</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Exterior Color</div>
+                                <div class="spec-value" id="exteriorColor">--</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Interior Color</div>
+                                <div class="spec-value" id="interiorColor">Black</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Transmission</div>
+                                <div class="spec-value" id="transmissionSpec">--</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Engine</div>
+                                <div class="spec-value" id="engineSpec">--</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Drivetrain</div>
+                                <div class="spec-value" id="drivetrainSpec">FWD</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Fuel Type</div>
+                                <div class="spec-value" id="fuelTypeSpec">--</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Body Style</div>
+                                <div class="spec-value" id="bodyStyle">Sedan</div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="spec-label">Doors</div>
+                                <div class="spec-value" id="doors">4</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle History -->
+                    <div class="history-card">
+                        <h3><i class="fas fa-history"></i> Vehicle History</h3>
+                        <div class="history-items">
+                            <div class="history-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Clean Title</strong>
+                                    <p>No reported accidents</p>
+                                </div>
+                            </div>
+                            <div class="history-item">
+                                <i class="fas fa-user"></i>
+                                <div>
+                                    <strong>Single Owner</strong>
+                                    <p>Well maintained</p>
+                                </div>
+                            </div>
+                            <div class="history-item">
+                                <i class="fas fa-clipboard-check"></i>
+                                <div>
+                                    <strong>Service Records</strong>
+                                    <p>Full service history available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Vehicles -->
+    <section class="similar-vehicles">
+        <div class="container">
+            <h2>Similar Vehicles You May Like</h2>
+            <div class="cars-grid" id="similarVehicles">
+                <!-- Will be populated dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Modal -->
+    <div class="modal" id="inquiryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Inquire About This Vehicle</h2>
+                <button class="close-btn" onclick="closeInquiryForm()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="inquiryForm">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" required placeholder="(508) 555-1234">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="4" placeholder="I'm interested in this vehicle..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Send Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Zam Zam Auto Shop</h3>
+                    <p>Worcester's premier destination for auto repair services and quality used cars.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="cars.html">Cars for Sale</a></li>
+                        <li><a href="parts.html">Parts & Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#oil-change">Oil Changes</a></li>
+                        <li><a href="services.html#brakes">Brake Service</a></li>
+                        <li><a href="services.html#diagnostics">Engine Diagnostics</a></li>
+                        <li><a href="services.html#tires">Tire Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Worcester, MA 01608</li>
+                        <li><i class="fas fa-phone"></i> (508) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@zamzamauto.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8AM-6PM, Sat: 9AM-4PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zam Zam Auto Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-btn" id="closeCartBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="cartItems"></div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/car-details.js"></script>
+</body>
+</html>

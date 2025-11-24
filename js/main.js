@@ -242,29 +242,8 @@ function setupPartFilters() {
 
 // View Car Details
 function viewCarDetails(carId) {
-    const car = window.carsData.find(c => c.id === carId);
-    if (!car) return;
-
-    const details = `
-Vehicle Details:
-${car.year} ${car.make} ${car.model}
-
-Price: $${car.price.toLocaleString()}
-Mileage: ${car.mileage.toLocaleString()} miles
-Transmission: ${car.transmission}
-Fuel Type: ${car.fuelType}
-Color: ${car.color}
-Condition: ${car.condition}
-
-Features:
-${car.features.map(f => '• ' + f).join('\n')}
-
-${car.description}
-
-Contact us at (508) 555-1234 to schedule a test drive!
-    `;
-
-    alert(details);
+    // Redirect to detailed car page
+    window.location.href = `car-details.html?id=${carId}`;
 }
 
 // Inquire about Car
