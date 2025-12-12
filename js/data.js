@@ -306,7 +306,25 @@ const servicesData = [
     }
 ];
 
+// Load vehicles from admin upload system (if any)
+function loadVehiclesFromAdmin() {
+    const adminVehicles = localStorage.getItem('zamzam_vehicles');
+    if (adminVehicles) {
+        try {
+            return JSON.parse(adminVehicles);
+        } catch (e) {
+            console.error('Error loading admin vehicles:', e);
+            return [];
+        }
+    }
+    return [];
+}
+
+// Merge default vehicles with admin-uploaded vehicles
+const adminVehicles = loadVehiclesFromAdmin();
+const mergedCarsData = [...carsData, ...adminVehicles];
+
 // Make data globally available
-window.carsData = carsData;
+window.carsData = mergedCarsData;
 window.partsData = partsData;
 window.servicesData = servicesData;

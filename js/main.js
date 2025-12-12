@@ -111,10 +111,24 @@ function loadAllCars(filters = {}) {
 
 // Create Car Card HTML
 function createCarCard(car) {
+    // Check if car has uploaded images (new format with filenames)
+    const hasImages = car.imageFilenames && car.imageFilenames.length > 0;
+    // Also support old format with base64 data
+    const hasOldImages = car.images && car.images.length > 0;
+
+    let imageHTML;
+    if (hasImages) {
+        imageHTML = `<img src="images/inventory/${car.imageFilenames[0]}" alt="${car.year} ${car.make} ${car.model}" style="width: 100%; height: 100%; object-fit: cover;">`;
+    } else if (hasOldImages) {
+        imageHTML = `<img src="${car.images[0].data}" alt="${car.year} ${car.make} ${car.model}" style="width: 100%; height: 100%; object-fit: cover;">`;
+    } else {
+        imageHTML = '<i class="fas fa-car"></i>';
+    }
+
     return `
         <div class="car-card">
             <div class="car-image">
-                <i class="fas fa-car"></i>
+                ${imageHTML}
                 ${car.condition === 'Like New' || car.condition === 'Excellent' ?
                     `<div class="car-badge">${car.condition}</div>` : ''}
             </div>

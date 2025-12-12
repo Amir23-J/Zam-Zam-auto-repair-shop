@@ -44,8 +44,25 @@ function loadCarDetails() {
 // Generate placeholder images for gallery
 function generateCarImages(car) {
     const images = [];
-    const imageCount = 8; // Number of gallery images
 
+    // Check if car has uploaded image filenames (new format)
+    if (car.imageFilenames && car.imageFilenames.length > 0) {
+        return car.imageFilenames.map((filename, index) => ({
+            url: `images/inventory/${filename}`,
+            caption: `${car.year} ${car.make} ${car.model} - Photo ${index + 1}`
+        }));
+    }
+
+    // Check if car has uploaded images (old base64 format)
+    if (car.images && car.images.length > 0) {
+        return car.images.map((img, index) => ({
+            url: img.data,
+            caption: `${car.year} ${car.make} ${car.model} - Photo ${index + 1}`
+        }));
+    }
+
+    // Otherwise, generate placeholders
+    const imageCount = 8; // Number of gallery images
     for (let i = 0; i < imageCount; i++) {
         images.push({
             url: car.image || null,
@@ -76,11 +93,18 @@ function populateGallery() {
     updateMainImage(0);
 
     // Create thumbnails
-    thumbnailGallery.innerHTML = carImages.map((img, index) => `
-        <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="selectImage(${index})">
-            <i class="fas fa-car"></i>
-        </div>
-    `).join('');
+    thumbnailGallery.innerHTML = carImages.map((img, index) => {
+        const hasImage = img.url && img.url !== null;
+        const thumbnailContent = hasImage
+            ? `<img src="${img.url}" alt="${img.caption}" style="width: 100%; height: 100%; object-fit: cover;">`
+            : '<i class="fas fa-car"></i>';
+
+        return `
+            <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="selectImage(${index})">
+                ${thumbnailContent}
+            </div>
+        `;
+    }).join('');
 
     updateImageCounter();
 }
