@@ -20,7 +20,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -36,245 +36,227 @@
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.8em;
+            margin-bottom: 15px;
         }
 
         .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 500;
         }
 
         .content {
             padding: 40px;
         }
 
-        .instructions {
-            background: #fef3c7;
-            border-left: 4px solid #f59e0b;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+        .big-instructions {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 3px solid #f59e0b;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
-        .instructions h3 {
+        .big-instructions h2 {
             color: #92400e;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-
-        .instructions ol {
-            margin-left: 20px;
-            color: #92400e;
-            line-height: 1.8;
-        }
-
-        .instructions strong {
-            color: #78350f;
-        }
-
-        .form-section {
-            margin-bottom: 30px;
-        }
-
-        .section-header {
-            background: #f3f4f6;
-            padding: 15px 20px;
-            border-radius: 10px;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #1f2937;
+            font-size: 1.8em;
         }
 
-        .section-header i {
-            color: #2563eb;
-        }
-
-        .form-row {
+        .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-bottom: 20px;
+            margin-top: 25px;
         }
 
-        .form-row.full {
-            grid-template-columns: 1fr;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-
-        .form-group label .required {
-            color: #ef4444;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 12px 15px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 1em;
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-group small {
-            color: #6b7280;
-            margin-top: 5px;
-            font-size: 0.85em;
-        }
-
-        .image-instructions {
-            background: #dbeafe;
-            border: 2px dashed #2563eb;
+        .step {
+            background: white;
             padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .image-instructions i {
-            font-size: 3em;
-            color: #2563eb;
+        .step-number {
+            background: #2563eb;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .step h3 {
+            color: #1f2937;
             margin-bottom: 10px;
+            font-size: 1.1em;
         }
 
-        .image-instructions p {
-            color: #1e40af;
+        .step p {
+            color: #6b7280;
+            font-size: 0.95em;
             line-height: 1.6;
         }
 
-        .image-list {
+        .form-section {
             background: #f9fafb;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
         }
 
-        .image-item {
+        .section-title {
+            font-size: 1.6em;
+            color: #1f2937;
+            margin-bottom: 10px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 10px;
-            background: white;
-            border-radius: 6px;
-            margin-bottom: 8px;
-            border: 1px solid #e5e7eb;
+            gap: 12px;
         }
 
-        .image-item:last-child {
-            margin-bottom: 0;
+        .section-title i {
+            color: #2563eb;
+            font-size: 1.2em;
         }
 
-        .add-image-btn {
-            background: #10b981;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
+        .section-subtitle {
+            color: #6b7280;
+            margin-bottom: 25px;
+            font-size: 1.05em;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        .input-label {
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: background 0.3s;
-        }
-
-        .add-image-btn:hover {
-            background: #059669;
-        }
-
-        .remove-btn {
-            background: #fee2e2;
-            color: #991b1b;
-            border: none;
-            padding: 5px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.85em;
-        }
-
-        .remove-btn:hover {
-            background: #fecaca;
-        }
-
-        .features-container {
-            display: flex;
-            gap: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #374151;
             margin-bottom: 10px;
         }
 
-        .features-container input {
+        .optional-tag {
+            background: #e0e7ff;
+            color: #4338ca;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .required-tag {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px 18px;
+            font-size: 1.1em;
+            border: 2px solid #d1d5db;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .input-field::placeholder {
+            color: #9ca3af;
+        }
+
+        .input-hint {
+            color: #6b7280;
+            font-size: 0.9em;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .input-hint i {
+            color: #3b82f6;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .photo-upload-area {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 3px dashed #2563eb;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .photo-upload-area i {
+            font-size: 4em;
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .photo-upload-area h3 {
+            color: #1e40af;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .photo-upload-area p {
+            color: #1e3a8a;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .photo-example {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 2px solid #93c5fd;
+        }
+
+        .photo-example strong {
+            color: #1e40af;
+        }
+
+        .photo-input-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .photo-input-row input {
             flex: 1;
         }
 
-        .feature-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .feature-tag {
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 6px 12px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9em;
-        }
-
-        .feature-tag button {
-            background: none;
+        .add-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
             border: none;
-            color: #1e40af;
-            cursor: pointer;
-            padding: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .actions {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px solid #e5e7eb;
-        }
-
-        .btn {
-            padding: 15px 40px;
-            border: none;
+            padding: 15px 30px;
             border-radius: 10px;
             font-size: 1.1em;
             font-weight: 600;
@@ -282,18 +264,184 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .add-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+        }
+
+        .photo-list {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .photo-item {
+            background: #f3f4f6;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .photo-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .remove-btn {
+            background: #fee2e2;
+            color: #991b1b;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .remove-btn:hover {
+            background: #fecaca;
+        }
+
+        .feature-input-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .feature-input-row input {
+            flex: 1;
+        }
+
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .feature-tag {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+            padding: 10px 18px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 1em;
+        }
+
+        .feature-tag button {
+            background: rgba(30, 64, 175, 0.1);
+            border: none;
+            color: #1e40af;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .feature-tag button:hover {
+            background: rgba(30, 64, 175, 0.2);
+        }
+
+        .preview-section {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 3px solid #10b981;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .preview-section.show {
+            display: block;
+        }
+
+        .preview-title {
+            color: #065f46;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .preview-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .preview-vehicle-title {
+            font-size: 1.8em;
+            color: #1f2937;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .preview-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .preview-detail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #4b5563;
+            font-size: 1.05em;
+        }
+
+        .preview-detail i {
+            color: #2563eb;
+            width: 24px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 3px solid #e5e7eb;
+        }
+
+        .btn-big {
+            padding: 20px 50px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.3em;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: white;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
         }
 
         .btn-secondary {
@@ -306,15 +454,17 @@
         }
 
         .success-banner {
-            background: #d1fae5;
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 3px solid #10b981;
             color: #065f46;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
             display: none;
             align-items: center;
-            gap: 10px;
-            font-size: 1.1em;
+            gap: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
         }
 
         .success-banner.show {
@@ -322,156 +472,269 @@
         }
 
         .success-banner i {
-            font-size: 1.5em;
+            font-size: 2em;
         }
 
         .inventory-section {
-            margin-top: 40px;
+            margin-top: 50px;
             padding-top: 40px;
-            border-top: 2px solid #e5e7eb;
+            border-top: 3px solid #e5e7eb;
         }
 
         .inventory-item {
-            background: #f9fafb;
+            background: white;
             border: 2px solid #e5e7eb;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-bottom: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.3s;
         }
 
-        .inventory-item-info h4 {
+        .inventory-item:hover {
+            border-color: #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        .inventory-info h4 {
             color: #1f2937;
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 8px;
         }
 
-        .inventory-item-info p {
+        .inventory-info p {
             color: #6b7280;
-            font-size: 0.9em;
         }
 
         .delete-btn {
             background: #fee2e2;
             color: #991b1b;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s;
         }
 
         .delete-btn:hover {
             background: #fecaca;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .btn-big {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1><i class="fas fa-car"></i> Add New Vehicle</h1>
-            <p>Super simple way to add vehicles to your website</p>
+            <h1><i class="fas fa-car"></i> Add a Vehicle</h1>
+            <p>Super Easy - Just Fill in the Blanks!</p>
         </div>
 
         <div class="content">
-            <div class="instructions">
-                <h3><i class="fas fa-lightbulb"></i> Quick Start Guide</h3>
-                <ol>
-                    <li><strong>First:</strong> Save your vehicle photos to the <code>images/inventory/</code> folder on your computer</li>
-                    <li><strong>Then:</strong> Fill out the simple form below with the vehicle details</li>
-                    <li><strong>Finally:</strong> Click "Add Vehicle" and you're done!</li>
-                </ol>
+            <div class="big-instructions">
+                <h2><i class="fas fa-lightbulb"></i> How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Save Photos</h3>
+                        <p>Put your vehicle photos in the <code>images/inventory/</code> folder</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Fill the Form</h3>
+                        <p>Type in the details below - only 6 things are required!</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Click Add</h3>
+                        <p>That's it! Your vehicle appears on the website instantly</p>
+                    </div>
+                </div>
             </div>
 
             <form id="vehicleForm">
-                <!-- Vehicle Images Section -->
+                <!-- Photos Section -->
                 <div class="form-section">
-                    <div class="section-header">
-                        <i class="fas fa-images"></i>
+                    <div class="section-title">
+                        <i class="fas fa-camera"></i>
                         Vehicle Photos
                     </div>
+                    <div class="section-subtitle">Add as many photos as you want (or skip this - you can add photos later!)</div>
 
-                    <div class="image-instructions">
-                        <i class="fas fa-folder-open"></i>
-                        <p><strong>Save your photos</strong> to: <code>images/inventory/</code><br>
-                        Then type the filenames below (example: honda-accord-1.jpg)</p>
-                    </div>
+                    <div class="photo-upload-area">
+                        <i class="fas fa-images"></i>
+                        <h3>First, save your photos to this folder:</h3>
+                        <p><code style="font-size: 1.2em; background: white; padding: 8px 15px; border-radius: 8px; display: inline-block; margin-top: 10px;">images/inventory/</code></p>
 
-                    <div id="imageList" class="image-list">
-                        <!-- Image filenames will appear here -->
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" id="imageFilename" placeholder="e.g., honda-accord-front.jpg">
+                        <div class="photo-example">
+                            <strong>Example photo names:</strong><br>
+                            honda-accord-front.jpg<br>
+                            toyota-camry-1.jpg<br>
+                            truck-interior.png
                         </div>
-                        <button type="button" class="add-image-btn" id="addImageBtn">
+                    </div>
+
+                    <div class="photo-input-row">
+                        <input type="text"
+                               id="imageFilename"
+                               class="input-field"
+                               placeholder="Type photo filename (e.g., honda-accord-1.jpg)">
+                        <button type="button" class="add-btn" id="addImageBtn">
                             <i class="fas fa-plus"></i> Add Photo
                         </button>
                     </div>
+
+                    <div id="photoListContainer" class="photo-list" style="display: none;">
+                        <div style="font-weight: 600; margin-bottom: 12px; color: #1f2937;">
+                            <i class="fas fa-check-circle" style="color: #10b981;"></i> Photos Added:
+                        </div>
+                        <div id="photoList"></div>
+                    </div>
                 </div>
 
-                <!-- Basic Info Section -->
+                <!-- Basic Details -->
                 <div class="form-section">
-                    <div class="section-header">
-                        <i class="fas fa-info-circle"></i>
-                        Basic Information
+                    <div class="section-title">
+                        <i class="fas fa-car"></i>
+                        Basic Details
+                    </div>
+                    <div class="section-subtitle">Only 6 things are required - the rest is optional!</div>
+
+                    <div class="two-column">
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span>Make</span>
+                                <span class="required-tag">Required</span>
+                            </div>
+                            <input type="text"
+                                   id="make"
+                                   class="input-field"
+                                   placeholder="Honda, Toyota, Ford..."
+                                   required>
+                            <div class="input-hint">
+                                <i class="fas fa-info-circle"></i>
+                                The car brand/manufacturer
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span>Model</span>
+                                <span class="required-tag">Required</span>
+                            </div>
+                            <input type="text"
+                                   id="model"
+                                   class="input-field"
+                                   placeholder="Accord, Camry, F-150..."
+                                   required>
+                            <div class="input-hint">
+                                <i class="fas fa-info-circle"></i>
+                                The specific car model
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Make <span class="required">*</span></label>
-                            <input type="text" id="make" placeholder="e.g., Toyota" required>
+                    <div class="two-column">
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span>Year</span>
+                                <span class="required-tag">Required</span>
+                            </div>
+                            <input type="number"
+                                   id="year"
+                                   class="input-field"
+                                   placeholder="2020"
+                                   min="1900"
+                                   max="2030"
+                                   required>
                         </div>
 
-                        <div class="form-group">
-                            <label>Model <span class="required">*</span></label>
-                            <input type="text" id="model" placeholder="e.g., Camry" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Year <span class="required">*</span></label>
-                            <input type="number" id="year" placeholder="2020" min="1900" max="2030" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Price <span class="required">*</span></label>
-                            <input type="number" id="price" placeholder="25000" min="0" required>
-                            <small>Just the number, no $ or commas</small>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Mileage <span class="required">*</span></label>
-                            <input type="number" id="mileage" placeholder="45000" min="0" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Color <span class="required">*</span></label>
-                            <input type="text" id="color" placeholder="e.g., Silver" required>
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span>Price</span>
+                                <span class="required-tag">Required</span>
+                            </div>
+                            <input type="number"
+                                   id="price"
+                                   class="input-field"
+                                   placeholder="25000"
+                                   min="0"
+                                   required>
+                            <div class="input-hint">
+                                <i class="fas fa-info-circle"></i>
+                                Just the number, we'll add the $ sign
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Transmission <span class="required">*</span></label>
-                            <select id="transmission" required>
-                                <option value="">Select...</option>
+                    <div class="two-column">
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span>Mileage</span>
+                                <span class="required-tag">Required</span>
+                            </div>
+                            <input type="number"
+                                   id="mileage"
+                                   class="input-field"
+                                   placeholder="45000"
+                                   min="0"
+                                   required>
+                            <div class="input-hint">
+                                <i class="fas fa-info-circle"></i>
+                                How many miles on the odometer
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span>Color</span>
+                                <span class="required-tag">Required</span>
+                            </div>
+                            <input type="text"
+                                   id="color"
+                                   class="input-field"
+                                   placeholder="Silver, Black, White..."
+                                   required>
+                        </div>
+                    </div>
+
+                    <div class="two-column">
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span>Transmission</span>
+                                <span class="optional-tag">Optional</span>
+                            </div>
+                            <select id="transmission" class="input-field">
                                 <option value="Automatic">Automatic</option>
                                 <option value="Manual">Manual</option>
                                 <option value="CVT">CVT</option>
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label>Fuel Type <span class="required">*</span></label>
-                            <select id="fuelType" required>
-                                <option value="">Select...</option>
+                        <div class="input-group">
+                            <div class="input-label">
+                                <span>Fuel Type</span>
+                                <span class="optional-tag">Optional</span>
+                            </div>
+                            <select id="fuelType" class="input-field">
                                 <option value="Gasoline">Gasoline</option>
                                 <option value="Diesel">Diesel</option>
                                 <option value="Electric">Electric</option>
@@ -480,68 +743,90 @@
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Condition <span class="required">*</span></label>
-                            <select id="condition" required>
-                                <option value="">Select...</option>
-                                <option value="Excellent">Excellent</option>
-                                <option value="Good">Good</option>
-                                <option value="Fair">Fair</option>
-                                <option value="New">New</option>
-                                <option value="Like New">Like New</option>
-                                <option value="Certified Pre-Owned">Certified Pre-Owned</option>
-                            </select>
+                    <div class="input-group">
+                        <div class="input-label">
+                            <span>Condition</span>
+                            <span class="optional-tag">Optional</span>
                         </div>
+                        <select id="condition" class="input-field">
+                            <option value="Good">Good</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Like New">Like New</option>
+                            <option value="Fair">Fair</option>
+                            <option value="New">New</option>
+                            <option value="Certified Pre-Owned">Certified Pre-Owned</option>
+                        </select>
                     </div>
 
-                    <div class="form-row full">
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea id="description" placeholder="Tell customers about this vehicle..."></textarea>
+                    <div class="input-group">
+                        <div class="input-label">
+                            <span>Description</span>
+                            <span class="optional-tag">Optional</span>
+                        </div>
+                        <textarea id="description"
+                                  class="input-field"
+                                  rows="4"
+                                  placeholder="Tell customers about this vehicle... (or leave blank)"></textarea>
+                        <div class="input-hint">
+                            <i class="fas fa-info-circle"></i>
+                            Example: "Well-maintained, single owner, clean title, runs great!"
                         </div>
                     </div>
                 </div>
 
                 <!-- Features Section -->
                 <div class="form-section">
-                    <div class="section-header">
+                    <div class="section-title">
                         <i class="fas fa-star"></i>
-                        Features (Optional)
+                        Features
                     </div>
+                    <div class="section-subtitle">Add cool features if you want (totally optional!)</div>
 
-                    <div class="features-container">
-                        <input type="text" id="featureInput" placeholder="e.g., Backup Camera">
-                        <button type="button" class="add-image-btn" id="addFeatureBtn">
-                            <i class="fas fa-plus"></i> Add
+                    <div class="feature-input-row">
+                        <input type="text"
+                               id="featureInput"
+                               class="input-field"
+                               placeholder="e.g., Backup Camera, Bluetooth, Sunroof...">
+                        <button type="button" class="add-btn" id="addFeatureBtn">
+                            <i class="fas fa-plus"></i> Add Feature
                         </button>
                     </div>
 
                     <div class="feature-tags" id="featureTags"></div>
                 </div>
 
-                <div class="actions">
-                    <button type="button" class="btn btn-secondary" id="clearBtn">
-                        <i class="fas fa-eraser"></i> Clear Form
+                <!-- Preview -->
+                <div class="preview-section" id="previewSection">
+                    <div class="preview-title">
+                        <i class="fas fa-eye"></i>
+                        Live Preview - This is how it will look!
+                    </div>
+                    <div class="preview-card" id="previewCard"></div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button type="button" class="btn-big btn-secondary" id="clearBtn">
+                        <i class="fas fa-eraser"></i> Start Over
                     </button>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-check-circle"></i> Add Vehicle
+                    <button type="submit" class="btn-big btn-primary">
+                        <i class="fas fa-check-circle"></i> Add This Vehicle!
                     </button>
                 </div>
             </form>
 
             <div class="success-banner" id="successBanner">
                 <i class="fas fa-check-circle"></i>
-                <span>Vehicle added successfully! It will now appear on your website.</span>
+                <span>Success! Your vehicle is now live on the website!</span>
             </div>
 
             <!-- Current Inventory -->
             <div class="inventory-section">
-                <div class="section-header">
+                <div class="section-title">
                     <i class="fas fa-warehouse"></i>
-                    Current Inventory (<span id="inventoryCount">0</span>)
+                    Your Current Inventory (<span id="inventoryCount">0</span> vehicles)
                 </div>
-                <div id="inventoryList"></div>
+                <div id="inventoryList" style="margin-top: 20px;"></div>
             </div>
         </div>
     </div>
